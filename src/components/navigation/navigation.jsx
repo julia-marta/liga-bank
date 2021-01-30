@@ -11,8 +11,8 @@ const Navigation = () => {
         <MenuItem key ={i + 1} type={`navigation`} title={item} isActive={item === ACTIVE_ITEM} />
       ))}
       </ul>
-      <ul class="navigation__list navigation__list--user">
-        <li class="navigation__item navigation__item--user">
+      <ul className="navigation__list navigation__list--user">
+        <li className="navigation__item navigation__item--user">
           {/* eslint-disable-next-line */}
           <a className="navigation__link navigation__link--user" href="#">
             <Icon name={`login`} width={20} height={22} />

@@ -1,0 +1,12 @@
+.converter__wrapper {
+  padding-top: 46.5px;
+  padding-bottom: 110px;
+}
+
+.converter__title {
+  @include indents-none;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 41px;
+  line-height: 57px;
+}

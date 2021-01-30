@@ -8,7 +8,7 @@ const SocialItem = (props) => {
     return (
       <li className="social__item">
         {/* eslint-disable-next-line */}
-        <a class={`social__link social__link--${type}`} href="#" aria-label={label}>
+        <a className={`social__link social__link--${type}`} href="#" aria-label={label}>
           <Icon name={type} width={iconWidth} height={iconHeight} />
         </a>
       </li>

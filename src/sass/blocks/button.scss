@@ -1,0 +1,10 @@
+.button {
+  box-sizing: border-box;
+  text-align: center;
+  font-family: inherit;
+  font-weight: 500;
+  color: $background;
+  background-color: $button;
+  border: none;
+  border-radius: 4px;
+}

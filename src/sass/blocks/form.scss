@@ -1,0 +1,82 @@
+.form__wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 85px;
+}
+
+.form__fieldset {
+  @include indents-none;
+  box-sizing: border-box;
+  border: none;
+}
+
+.form__label {
+  @include indents-none;
+  display: block;
+  margin-bottom: 23.5px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.form__inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.form__input {
+  @include indents-none;
+  box-sizing: border-box;
+  display: block;
+  min-height: 60px;
+  font: inherit;
+  line-height: 34px;
+  color: $input-text;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid $main-text;
+  border-radius: 4px;
+
+  &--number,
+  &--calendar {
+    width: 390px;
+    font-size: 24px;
+  }
+
+  &--number {
+    margin-right: 15px;
+    padding: 11px 0;
+    font-weight: 500;
+    text-align: center;
+    appearance: textfield;
+  }
+
+  &--select {
+    width: 120px;
+    padding: 11.5px 13px 0;
+    font-size: 30px;
+    appearance: none;
+  }
+
+  &--calendar {
+    padding: 6px 116px 0;
+  }
+}
+
+.form__select,
+.form__calendar {
+  position: relative;
+}
+
+.form__to-save {
+  width: 382px;
+  min-height: 60px;
+  font-size: 18px;
+  line-height: 25px;
+  padding-top: 1px;
+}
