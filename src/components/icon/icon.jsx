@@ -3,19 +3,21 @@ import Sprite from '../../img/sprite.svg';
 
 const Icon = (props) => {
 
-  const {name, width, height} = props;
+  const {icon} = props;
 
   return(
-    <svg className={`icon icon--${name}`} width={width} height={height}>
-      <use xlinkHref={`${Sprite}#icon-${name}`} />
+    <svg className={`icon icon--${icon.name}`} width={icon.width} height={icon.height}>
+      <use xlinkHref={`${Sprite}#icon-${icon.name}`} />
     </svg>
   )
 }
 
 Icon.propTypes = {
-  name: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
+  icon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default Icon;

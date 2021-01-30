@@ -1,6 +1,6 @@
 import Icon from "../icon/icon";
 import MenuItem from "../menu-item/menu-item";
-import {MENU_ITEMS, ACTIVE_ITEM} from "../../const";
+import {MENU_ITEMS, ACTIVE_ITEM, IconType} from "../../const";
 
 const Navigation = () => {
 
@@ -15,7 +15,7 @@ const Navigation = () => {
         <li className="navigation__item navigation__item--user">
           {/* eslint-disable-next-line */}
           <a className="navigation__link navigation__link--user" href="#">
-            <Icon name={`login`} width={20} height={22} />
+            <Icon icon={IconType.LOGIN} />
             Войти в Интернет-банк
           </a>
         </li>

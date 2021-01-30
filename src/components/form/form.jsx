@@ -3,7 +3,7 @@ import FormFieldset from "../form-fieldset/form-fieldset";
 import FormCalendar from "../form-calendar/form-calendar";
 import Button from "../button/button";
 import Icon from "../icon/icon";
-import {CONVERTER_FIELDS} from "../../const";
+import {CONVERTER_FIELDS, IconType} from "../../const";
 
 const ConverterForm = () => {
 
@@ -13,7 +13,7 @@ const ConverterForm = () => {
         {CONVERTER_FIELDS.map((item, i) => (
           <FormFieldset key ={i + 1} type={item.type} label={item.label} base={item.currency} />
         ))}
-        <Icon name={`arrows`} width={56} height={36} />
+        <Icon icon={IconType.ARROWS} />
       </FormWrapper>
       <FormWrapper>
         <FormCalendar />

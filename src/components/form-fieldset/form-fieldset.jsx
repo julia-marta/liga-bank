@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Icon from "../icon/icon";
-import {CURRENCIES} from "../../const";
+import {CURRENCIES, IconType} from "../../const";
 
 const FormFieldset = (props) => {
 
@@ -19,7 +19,7 @@ const FormFieldset = (props) => {
             <option key={currency} value={currency} >{currency}</option>
           ))}
           </select>
-          <Icon name={`select`} width={18} height={11} />
+          <Icon icon={IconType.SELECT} />
         </div>
       </div>
     </fieldset>
