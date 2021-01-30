@@ -1,0 +1,87 @@
+.history {
+  box-sizing: border-box;
+  padding: 39px 70px;
+  background-color: $background;
+}
+
+.history__title {
+  @include indents-none;
+  margin-bottom: 44px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 49px;
+}
+
+.history__list {
+  @include indents-none;
+  @include list-reset;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 230px;
+  margin-bottom: 25px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -31px;
+    left: 50%;
+    box-sizing: border-box;
+    width: 0px;
+    height: 289px;
+    border: 1px solid $border;
+    box-shadow: 0px 4px 4px $shadow;
+  }
+}
+
+.history__item {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 391px;
+  margin-bottom: 23px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 222px;
+    width: 41px;
+    height: 18px;
+    background: url("../../img/icons/icon-arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.history__date,
+.history__base,
+.history__result {
+  @include indents-none;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.history__date {
+  margin-right: 41px;
+}
+
+.history__base {
+  margin-right: 65px;
+}
+
+.history__currency {
+  margin-left: 4.5px;
+}
+
+.history__to-clear {
+  width: 198px;
+  min-height: 51px;
+  font-size: 16px;
+  line-height: 19px;
+  padding-top: 1px;
+}

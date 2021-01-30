@@ -1,4 +1,5 @@
 import Form from "../form/form";
+import History from "../history/history";
 
 const Converter = () => {
 
@@ -7,6 +8,7 @@ const Converter = () => {
       <div className="converter__wrapper container">
         <h2 className="converter__title">Конвертер валют</h2>
         <Form />
+        <History />
       </div>
     </section>
   );
