@@ -1,0 +1,16 @@
+.header {
+  padding: 26px 0;
+  background-color: $background;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.header__logo {
+  margin-right: 58px;
+  margin-left: -1px;
+}

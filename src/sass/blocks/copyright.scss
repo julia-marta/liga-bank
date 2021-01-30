@@ -1,0 +1,15 @@
+.copyright__logo {
+  margin-bottom: 11px;
+  margin-left: -1px;
+}
+
+.copyright__text {
+  @include indents-none;
+  font-size: 12px;
+  line-height: 17px;
+  color: $pale-text;
+}
+
+.copyright__text span {
+  font-size: 14px;
+}

@@ -1,0 +1,24 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 102px;
+  padding-top: 12.5px;
+}
+
+.social__link {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  &--facebook {
+    width: 9px;
+  }
+
+  &--twitter,
+  &--youtube {
+    height: 13px;
+  }
+}

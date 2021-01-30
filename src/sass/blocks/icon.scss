@@ -1,0 +1,19 @@
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &--login {
+    top: 8px;
+  }
+
+  &--mobile-phone{
+    top: 1px;
+    left: -29px;
+  }
+
+  &--phone  {
+    top: 1px;
+    left: -33px;
+  }
+}
