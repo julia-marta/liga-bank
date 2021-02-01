@@ -2,6 +2,8 @@ export const MENU_ITEMS = [`Услуги`, `Рассчитать кредит`, 
 
 export const ACTIVE_ITEM = `Конвертер валют`;
 
+export const MAX_RANGE = 7;
+
 export const CURRENCIES = [`RUB`, `USD`, `EUR`, `GBP`, `CNY`];
 
 export const CONVERTER_FIELDS = [{
@@ -12,6 +14,12 @@ export const CONVERTER_FIELDS = [{
     type: `want`,
     label: `Хочу приобрести`,
 }];
+
+export const DefaultField = {
+  CURRENT_INPUT: `have`,
+  BASE_CURRENCY: `RUB`,
+  OTHER_CURRENCY: `USD`,
+}
 
 export const IconType = {
   ARROWS: {

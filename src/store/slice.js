@@ -1,9 +1,12 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import swal from 'sweetalert';
+import {DefaultField} from "../const";
 
-export const getResult = createAsyncThunk('converter/getResult', (base, {extra}) => {
+const {CURRENT_INPUT, BASE_CURRENCY, OTHER_CURRENCY} = DefaultField;
 
-  return extra.get(`/latest?base=${base}`)
+export const getResult = createAsyncThunk('converter/getResult', ({base, date} = {}, {extra}) => {
+
+  return extra.get(`/${date}?base=${base}`)
   .then(response => response.data)
   .catch((error) => {
     swal(`Error`, `Something went wrong!`, `error`);
@@ -12,10 +15,11 @@ export const getResult = createAsyncThunk('converter/getResult', (base, {extra})
 });
 
 const initialState = {
-  current: 'have',
+  current: CURRENT_INPUT,
   amount: '',
-  from: 'RUB',
-  to: 'USD',
+  from: BASE_CURRENCY,
+  to: OTHER_CURRENCY,
+  date: new Date(),
   result: '',
 }
 
@@ -35,6 +39,9 @@ const converterSlice = createSlice({
     setOtherCurrency(state, action) {
       state.to = action.payload
     },
+    setDate(state, action) {
+      state.date = action.payload
+    },
   },
   extraReducers: {
     [getResult.fulfilled]: (state, action) => {
@@ -45,5 +52,5 @@ const converterSlice = createSlice({
 
 const Reducer = converterSlice.reducer;
 
-export const {setCurrent, setAmount, setBaseCurrency, setOtherCurrency} = converterSlice.actions;
+export const {setCurrent, setAmount, setBaseCurrency, setOtherCurrency, setDate} = converterSlice.actions;
 export default Reducer;

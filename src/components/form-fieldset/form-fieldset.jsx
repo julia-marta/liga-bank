@@ -10,7 +10,7 @@ const FormFieldset = (props) => {
   const {type, label,
         current, amount,
         baseCurrency, otherCurrency,
-        result,
+        date, result,
         getResultAction,
         setCurrentAction, setAmountAction,
         setBaseCurrencyAction, setOtherCurrencyAction}
@@ -32,14 +32,15 @@ const FormFieldset = (props) => {
         setCurrentAction(currentInput);
         setBaseCurrencyAction(otherCurrency);
         setOtherCurrencyAction(baseCurrency);
-        getResultAction(otherCurrency);
+        getResultAction({base: otherCurrency, date: date});
       } else {
-        getResultAction(baseCurrency);
+        getResultAction({base: baseCurrency, date: date});
       }
     }, [
       current,
       baseCurrency,
       otherCurrency,
+      date,
       getResultAction,
       setCurrentAction,
       setAmountAction,
@@ -54,13 +55,13 @@ const FormFieldset = (props) => {
 
       if (currentSelect === current) {
         setBaseCurrencyAction(evt.target.value);
-        getResultAction(evt.target.value);
+        getResultAction({base: evt.target.value, date: date});
         } else {
           setOtherCurrencyAction(evt.target.value);
-          getResultAction(baseCurrency);
+          getResultAction({base: baseCurrency, date: date});
         }
 
-    }, [current, baseCurrency, getResultAction, setBaseCurrencyAction, setOtherCurrencyAction]
+    }, [current, baseCurrency, date, getResultAction, setBaseCurrencyAction, setOtherCurrencyAction]
   );
 
   return (
@@ -96,6 +97,7 @@ FormFieldset.propTypes = {
   amount: PropTypes.string.isRequired,
   baseCurrency: PropTypes.string.isRequired,
   otherCurrency: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
   result: PropTypes.string.isRequired,
   getResultAction: PropTypes.func.isRequired,
   setCurrentAction: PropTypes.func.isRequired,
@@ -109,12 +111,13 @@ const mapStateToProps = (store) => ({
   amount: store.amount,
   baseCurrency: store.from,
   otherCurrency: store.to,
+  date: store.date.toISOString().split('T')[0],
   result: store.result.toString(),
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getResultAction(base) {
-    dispatch(getResult(base));
+  getResultAction({base, date}) {
+    dispatch(getResult({base, date}));
   },
   setCurrentAction(input) {
     dispatch(setCurrent(input));
