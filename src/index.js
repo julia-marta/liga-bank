@@ -1,10 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {configureStore} from '@reduxjs/toolkit';
 import './sass/style.scss';
 import App from './components/app/app';
+import Reducer from './store/slice';
+import {createAPI} from './services/api';
+
+const api = createAPI();
+
+const store = configureStore({
+  reducer: Reducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      thunk: {
+        extraArgument: api,
+      }
+    }),
+})
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
-

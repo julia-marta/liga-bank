@@ -2,17 +2,15 @@ export const MENU_ITEMS = [`Услуги`, `Рассчитать кредит`, 
 
 export const ACTIVE_ITEM = `Конвертер валют`;
 
-export const CURRENCIES = [`RUB`, `USD`, `EUR`, `GBR`, `CNY`];
+export const CURRENCIES = [`RUB`, `USD`, `EUR`, `GBP`, `CNY`];
 
 export const CONVERTER_FIELDS = [{
     type: `have`,
     label: `У меня есть`,
-    currency: `RUB`,
   },
   {
     type: `want`,
     label: `Хочу приобрести`,
-    currency: `USD`,
 }];
 
 export const IconType = {

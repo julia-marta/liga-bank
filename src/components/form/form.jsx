@@ -11,7 +11,7 @@ const ConverterForm = () => {
     <form className="converter__form form">
       <FormWrapper>
         {CONVERTER_FIELDS.map((item, i) => (
-          <FormFieldset key ={i + 1} type={item.type} label={item.label} base={item.currency} />
+          <FormFieldset key ={i + 1} type={item.type} label={item.label} />
         ))}
         <Icon icon={IconType.ARROWS} />
       </FormWrapper>
