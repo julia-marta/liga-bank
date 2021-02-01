@@ -50,6 +50,10 @@
   &--calendar {
     width: 390px;
     font-size: 24px;
+
+    &:focus {
+      box-shadow:inset 0 0 2px 1px $button;
+    }
   }
 
   &--number {
@@ -70,6 +74,10 @@
     padding: 11.5px 13px 0;
     font-size: 30px;
     appearance: none;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &--calendar {
