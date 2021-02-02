@@ -70,7 +70,7 @@ const FormFieldset = (props) => {
       <label className="form__label" htmlFor={type}>{label}</label>
       <div className="form__inputs">
         <input className="form__input form__input--number"
-        type="number" id={type} placeholder="0" value={current === type ? amount : result}
+        type="number" id={type} placeholder="0" value={current === type ? amount : result === `0.0000` ? `` : result}
         onKeyUp={handleInputKeyUp} onChange={handleInputChange}
         />
         <div className="form__select">
@@ -112,7 +112,7 @@ const mapStateToProps = (store) => ({
   baseCurrency: store.from,
   otherCurrency: store.to,
   date: store.date.toISOString().split('T')[0],
-  result: store.result.toString(),
+  result: store.result.toFixed(4),
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -135,4 +135,3 @@ const mapDispatchToProps = (dispatch) => ({
 
 export {FormFieldset};
 export default connect(mapStateToProps, mapDispatchToProps)(FormFieldset);
-

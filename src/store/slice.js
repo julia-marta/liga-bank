@@ -20,7 +20,8 @@ const initialState = {
   from: BASE_CURRENCY,
   to: OTHER_CURRENCY,
   date: new Date(),
-  result: '',
+  result: 0,
+  logs: [],
 }
 
 const converterSlice = createSlice({
@@ -42,15 +43,34 @@ const converterSlice = createSlice({
     setDate(state, action) {
       state.date = action.payload
     },
+    addLog(state) {
+      state.logs.push({
+          date: state.date,
+          base: {
+            sum: state.amount,
+            currency: state.from,
+          },
+          result: {
+            sum: state.result,
+            currency: state.to,
+          }
+      })
+    },
+    deleteLog(state) {
+      state.logs.splice(0, 1);
+    },
+    clearLogs(state) {
+      state.logs.length = 0;
+    },
   },
   extraReducers: {
     [getResult.fulfilled]: (state, action) => {
-      state.result = (action.payload.rates[state.to] * state.amount).toFixed(4);
+      state.result = (action.payload.rates[state.to] * state.amount);
     }
   }
 });
 
 const Reducer = converterSlice.reducer;
 
-export const {setCurrent, setAmount, setBaseCurrency, setOtherCurrency, setDate} = converterSlice.actions;
+export const {setCurrent, setAmount, setBaseCurrency, setOtherCurrency, setDate, addLog, deleteLog, clearLogs} = converterSlice.actions;
 export default Reducer;

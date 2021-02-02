@@ -27,8 +27,8 @@
 }
 
 .contacts__link {
+  @include font-weight($medium);
   position: relative;
-  font-weight: 500;
   line-height: 22px;
 }
 

@@ -4,8 +4,8 @@
 }
 
 .bottom-navigation__link {
+  @include font-weight($medium);
   display: block;
   padding: 4.5px 0;
-  font-weight: 500;
   line-height: 22px;
 }

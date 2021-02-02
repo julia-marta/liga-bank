@@ -1,102 +1,62 @@
+import {useCallback} from "react";
+import {connect} from "react-redux";
+import PropTypes from "prop-types";
 import HistoryItem from "../history-item/history-item";
 import Button from "../button/button";
+import {clearLogs} from "../../store/slice";
 
-const mockHistory = [
-    {
-  date: new Date(2020, 10, 25).toLocaleDateString(),
-  base: {
-    sum: 1000,
-    currency: `RUB`,
-  },
-  result: {
-    sum: 13.1234.toLocaleString('ru-RU', { minimumFractionDigits: 4}),
-    currency: `USD`,
-  }
-},
-{
-    date: new Date(2020, 10, 25).toLocaleDateString(),
-    base: {
-      sum: 1000,
-      currency: `RUB`,
-    },
-    result: {
-      sum: 13.1234.toLocaleString('ru-RU', { minimumFractionDigits: 4}),
-      currency: `USD`,
-    }
-  },
-  {
-    date: new Date(2020, 10, 25).toLocaleDateString(),
-    base: {
-      sum: 1000,
-      currency: `RUB`,
-    },
-    result: {
-      sum: 13.1234.toLocaleString('ru-RU', { minimumFractionDigits: 4}),
-      currency: `USD`,
-    }
-  },
-  {
-    date: new Date(2020, 10, 25).toLocaleDateString(),
-    base: {
-      sum: 1000,
-      currency: `RUB`,
-    },
-    result: {
-      sum: 13.1234.toLocaleString('ru-RU', { minimumFractionDigits: 4}),
-      currency: `USD`,
-    }
-  },
-  {
-    date: new Date(2020, 10, 25).toLocaleDateString(),
-    base: {
-      sum: 1000,
-      currency: `RUB`,
-    },
-    result: {
-      sum: 13.1234.toLocaleString('ru-RU', { minimumFractionDigits: 4}),
-      currency: `USD`,
-    }
-  },
-  {
-    date: new Date(2020, 10, 25).toLocaleDateString(),
-    base: {
-      sum: 1000,
-      currency: `RUB`,
-    },
-    result: {
-      sum: 13.1234.toLocaleString('ru-RU', { minimumFractionDigits: 4}),
-      currency: `USD`,
-    }
-  },
-  {
-    date: new Date(2020, 10, 25).toLocaleDateString(),
-    base: {
-      sum: 1000,
-      currency: `RUB`,
-    },
-    result: {
-      sum: 13.1234.toLocaleString('ru-RU', { minimumFractionDigits: 4}),
-      currency: `USD`,
-    }
-  },
+const History = (props) => {
 
-];
+  const {logs, clearHistory} = props;
 
-const History = () => {
+  const handleClearButtonClick = useCallback(
+    () => {
+
+      if (logs.length > 0) {
+        clearHistory();
+      }
+    }, [logs, clearHistory]
+  );
 
   return (
       <div className="converter__history history">
         <h2 className="history__title">История конвертации</h2>
         <ul className="history__list">
-        {mockHistory.length === 0 || !mockHistory ? <span>Здесь пока ничего нет</span> : mockHistory.map((item, i) => (
-          <HistoryItem key={i + 1} date={item.date} baseSum={item.base.sum} baseCurrency={item.base.currency}
-           resultSum={item.result.sum} resultCurrency={item.result.currency}
-           />
+        {logs.length === 0 ? <span>Здесь пока ничего нет</span> : logs.map((item, i) => (
+          <HistoryItem key={i + 1} log={item}/>
         ))}
         </ul>
-        <Button type={`button`} name={`history__to-clear`} label={`Очистить историю`} />
+        <Button type={`button`} name={`history__to-clear`} label={`Очистить историю`} onClick={handleClearButtonClick} />
       </div>
   );
 };
 
-export default History;
+History.propTypes = {
+  logs: PropTypes.arrayOf(
+    PropTypes.shape({
+        date: PropTypes.instanceOf(Date),
+        base: PropTypes.shape({
+          sum: PropTypes.string.isRequired,
+          currency: PropTypes.string.isRequired,
+        }).isRequired,
+        result: PropTypes.shape({
+          sum: PropTypes.number.isRequired,
+          currency: PropTypes.string.isRequired,
+        }).isRequired,
+    })
+  ).isRequired,
+  clearHistory: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (store) => ({
+  logs: store.logs,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  clearHistory() {
+    dispatch(clearLogs());
+  },
+});
+
+export {History};
+export default connect(mapStateToProps, mapDispatchToProps)(History);

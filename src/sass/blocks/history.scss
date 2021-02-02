@@ -6,8 +6,8 @@
 
 .history__title {
   @include indents-none;
+  @include font-weight($medium);
   margin-bottom: 44px;
-  font-weight: 500;
   font-size: 28px;
   line-height: 49px;
 }
@@ -37,25 +37,13 @@
 }
 
 .history__item {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: flex-start;
-  width: 391px;
+  align-items: center;
+  min-width: 392px;
+  max-width: 500px;
   margin-bottom: 23px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 4px;
-    left: 222px;
-    width: 41px;
-    height: 18px;
-    background: url("../../img/icons/icon-arrow.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-  }
 }
 
 .history__date,
@@ -71,11 +59,19 @@
 }
 
 .history__base {
-  margin-right: 65px;
+  margin-right: 12px;
 }
 
 .history__currency {
   margin-left: 4.5px;
+}
+
+.history__icon {
+  position: relative;
+  width: 41px;
+  height: 18px;
+  margin-top: 3px;
+  margin-right: 12px;
 }
 
 .history__to-clear {

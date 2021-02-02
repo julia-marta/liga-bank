@@ -5,8 +5,8 @@
 
 .converter__title {
   @include indents-none;
+  @include font-weight($bold);
   margin-bottom: 50px;
-  font-weight: 700;
   font-size: 41px;
   line-height: 57px;
 }

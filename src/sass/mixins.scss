@@ -6,3 +6,7 @@
   margin: 0;
   padding: 0;
 }
+
+@mixin font-weight($size: 400) {
+  font-weight: $size;
+}

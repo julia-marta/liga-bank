@@ -34,8 +34,8 @@
 }
 
 .promo__title {
+  @include font-weight($bold);
   margin-bottom: 8px;
-  font-weight: 700;
   font-size: 54px;
   line-height: 63px;
   color: $background;
@@ -49,12 +49,12 @@
 }
 
 .promo__to-credit {
+  @include font-weight($medium);
   display: block;
   box-sizing: border-box;
   width: 234px;
   height: 53px;
   padding: 15px 0;
-  font-weight: 500;
   font-size: 18px;
   line-height: 21px;
   text-align: center;
