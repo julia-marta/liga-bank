@@ -8,6 +8,11 @@
   border: none;
   border-radius: 4px;
 
+  &--light {
+    color: $main-text;
+    background-color: $background;
+  }
+
   &:hover,
   &:focus {
     cursor: pointer;

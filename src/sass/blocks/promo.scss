@@ -49,15 +49,10 @@
 }
 
 .promo__to-credit {
-  @include font-weight($medium);
   display: block;
-  box-sizing: border-box;
   width: 234px;
-  height: 53px;
+  min-height: 53px;
   padding: 15px 0;
   font-size: 18px;
   line-height: 21px;
-  text-align: center;
-  background-color: $background;
-  border-radius: 4px;
 }

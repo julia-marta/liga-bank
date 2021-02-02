@@ -8,7 +8,7 @@ const Promo = () => {
           <p className="promo__title">Лига Банк</p>
           <p className="promo__subtitle">Кредиты на любой случай</p>
           {/* eslint-disable-next-line */}
-          <a className="promo__to-credit" href="#">Рассчитать кредит</a>
+          <a className="promo__to-credit button button--light" href="#">Рассчитать кредит</a>
         </div>
       </div>
     </section>
