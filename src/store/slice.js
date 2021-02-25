@@ -44,7 +44,7 @@ const converterSlice = createSlice({
       state.date = action.payload
     },
     addLog(state) {
-      state.logs.push({
+      state.logs.unshift({
           date: state.date,
           base: {
             sum: state.amount,
@@ -57,7 +57,7 @@ const converterSlice = createSlice({
       })
     },
     deleteLog(state) {
-      state.logs.splice(0, 1);
+      state.logs.pop();
     },
     clearLogs(state) {
       state.logs.length = 0;
