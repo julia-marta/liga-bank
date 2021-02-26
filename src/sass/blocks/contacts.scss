@@ -30,6 +30,11 @@
   @include font-weight($medium);
   position: relative;
   line-height: 22px;
+
+  &:hover,
+  &:focus {
+    color: $button;
+  }
 }
 
 .contacts__text {

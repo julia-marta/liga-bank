@@ -36,7 +36,10 @@
     padding-left: 30px;
   }
 
-  &--active {
+  &--active,
+  &:hover,
+  &:focus {
     color: $button;
   }
+
 }

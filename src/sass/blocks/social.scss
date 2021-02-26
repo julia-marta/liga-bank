@@ -21,4 +21,9 @@
   &--youtube {
     height: 13px;
   }
+
+  &:hover,
+  &:focus {
+    color: $button;
+  }
 }

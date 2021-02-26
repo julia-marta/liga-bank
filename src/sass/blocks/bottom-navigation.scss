@@ -8,4 +8,9 @@
   display: block;
   padding: 4.5px 0;
   line-height: 22px;
+
+  &:hover,
+  &:focus {
+    color: $button;
+  }
 }
