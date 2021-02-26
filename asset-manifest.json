@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/liga-bank/static/css/main.69536dbd.chunk.css",
+    "main.js": "/liga-bank/static/js/main.5aaeaeb3.chunk.js",
+    "main.js.map": "/liga-bank/static/js/main.5aaeaeb3.chunk.js.map",
+    "runtime-main.js": "/liga-bank/static/js/runtime-main.ba7c3b17.js",
+    "runtime-main.js.map": "/liga-bank/static/js/runtime-main.ba7c3b17.js.map",
+    "static/css/2.00850458.chunk.css": "/liga-bank/static/css/2.00850458.chunk.css",
+    "static/js/2.78244ebe.chunk.js": "/liga-bank/static/js/2.78244ebe.chunk.js",
+    "static/js/2.78244ebe.chunk.js.map": "/liga-bank/static/js/2.78244ebe.chunk.js.map",
+    "index.html": "/liga-bank/index.html",
+    "static/css/2.00850458.chunk.css.map": "/liga-bank/static/css/2.00850458.chunk.css.map",
+    "static/css/main.69536dbd.chunk.css.map": "/liga-bank/static/css/main.69536dbd.chunk.css.map",
+    "static/js/2.78244ebe.chunk.js.LICENSE.txt": "/liga-bank/static/js/2.78244ebe.chunk.js.LICENSE.txt",
+    "static/media/logo.65ddc6c9.svg": "/liga-bank/static/media/logo.65ddc6c9.svg",
+    "static/media/style.scss": "/liga-bank/static/media/roboto-700.fe848f0b.woff2",
+    "static/media/sprite.fbcf7a3c.svg": "/liga-bank/static/media/sprite.fbcf7a3c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ba7c3b17.js",
+    "static/css/2.00850458.chunk.css",
+    "static/js/2.78244ebe.chunk.js",
+    "static/css/main.69536dbd.chunk.css",
+    "static/js/main.5aaeaeb3.chunk.js"
+  ]
+}
