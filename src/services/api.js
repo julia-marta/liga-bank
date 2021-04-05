@@ -1,7 +1,7 @@
 import axios from "axios";
 import swal from 'sweetalert';
 
-const BASE_URL = `https://api.exchangeratesapi.io`;
+const BASE_URL = `https://api.ratesapi.io/api`;
 
 export const createAPI = () => {
   const api = axios.create({

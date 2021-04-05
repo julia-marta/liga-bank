@@ -2,7 +2,7 @@
 
 :bar_chart: Проект выполнен в рамках грейдирования HTML Academy.
 
-Для получения курсов валют использовано API: [https://exchangeratesapi.io](https://exchangeratesapi.io/)
+Для получения курсов валют использовано API: [https://ratesapi.io](https://ratesapi.io/)
 ___
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
